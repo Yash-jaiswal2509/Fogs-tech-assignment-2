@@ -8,7 +8,7 @@ type ContextType = {
 }
 
 const initialState = {
-    time: 0,
+    time: 2,
     setTime: () => { },
     word: "Hello",
     setWord: () => { },
@@ -29,7 +29,7 @@ type GameContextProviderProps = {
 }
 
 const GameContextProvider = ({ children }: GameContextProviderProps) => {
-    const [time, setTime] = useState<number>(0);
+    const [time, setTime] = useState<number>(2);
     const [word, setWord] = useState<string>("Hello");
 
     const contextValue = {

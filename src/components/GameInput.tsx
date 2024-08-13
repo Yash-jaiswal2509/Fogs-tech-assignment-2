@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useGameContext } from "../ContextProvider";
+import { toast } from "sonner";
 
 const GameInput = () => {
     const [inputWord, setInputWord] = useState<string>("Hello");
     const [inputTime, setInputTime] = useState<number>(1);
+
     const { word, time, setTime, setWord } = useGameContext();
 
     const handleWordChange = () => {
@@ -14,6 +16,10 @@ const GameInput = () => {
 
     const handleTimeChange = () => {
         if (inputTime < 0) return;
+        if (inputTime > 20) return toast.error("Speed limit reached!!", {
+            description: "Maximum speed limit is 20",
+            closeButton: true,
+        });
         setTime(inputTime);
         setInputTime(1);
     };
