@@ -25,8 +25,8 @@ const GameInput = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col gap-10">
-            <div className="flex flex-col gap-3">
+        <div className="w-full h-full flex flex-col gap-10 items-center">
+            <div className="flex flex-col gap-3 text-center lg:text-left">
                 <h1 className="text-xl text-cyan-400">Input Word</h1>
                 <div className="flex items-center gap-2">
                     <input
@@ -46,7 +46,7 @@ const GameInput = () => {
                 <h1 className="text-cyan-600">Current Word: {word}</h1>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 text-center lg:text-left">
                 <h1 className="text-xl text-cyan-400">Increase speed</h1>
                 <div className="flex items-center gap-2">
                     <input

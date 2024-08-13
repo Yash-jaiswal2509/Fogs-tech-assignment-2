@@ -1,12 +1,12 @@
 
 const Header = () => {
     return (
-        <div className="border-b-[1px] border-cyan-400 shadow-md shadow-cyan-400/50 flex items-center justify-between px-4">
+        <div className="border-b-[1px] border-cyan-400 shadow-md shadow-cyan-400/50 flex items-center justify-between sm:px-4">
             <div className="flex items-center p-4 gap-2">
                 <img src="/Gaming website logo.jpeg" alt="Website Logo" className="h-16 aspect-square rounded-full shadow-sm shadow-cyan-400" />
-                <h1 className="text-cyan-400 text-3xl font-mono font-semibold">GridWave</h1>
+                <h1 className="text-cyan-400 text-2xl md:text-3xl font-mono font-semibold">GridWave</h1>
             </div>
-            <div>
+            <div className="md:block hidden">
                 <ul className="flex items-center text-cyan-400 gap-6 text-lg font-mono">
                     <li className="cursor-pointer  hover:text-cyan-700">Home</li>
                     <li className="cursor-pointer  hover:text-cyan-700">Products</li>
@@ -14,9 +14,9 @@ const Header = () => {
                     <li className="cursor-pointer  hover:text-cyan-700">Contact</li>
                 </ul>
             </div>
-            <div className="flex items-center gap-4">
-                <img className="h-8 cursor-pointer" src="/assets/notification.svg" alt="Notification" />
-                <img className="h-8 cursor-pointer" src="/assets/user.svg" alt="User" />
+            <div className="flex items-center gap-4 px-1">
+                <img className="h-6 sm:h-8 cursor-pointer" src="/assets/notification.svg" alt="Notification" />
+                <img className="h-6 sm:h-8 cursor-pointer" src="/assets/user.svg" alt="User" />
             </div>
         </div>
     )

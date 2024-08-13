@@ -84,8 +84,15 @@ body,
   display: grid;
   grid-template-rows: repeat(15, 1fr);
   grid-template-columns: repeat(20, 1fr);
-  height: 70vh;
-  width: 70vw;
+  height: 50vh;
+  width: 90vw;
   border-width: 1px;
   border-color: aqua;
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    height: 70vh;
+    width: 70vw;
+  }
 }

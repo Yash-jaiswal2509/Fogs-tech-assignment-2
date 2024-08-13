@@ -9,7 +9,7 @@ const Layout = () => {
         <>
             <Header />
             <Toaster theme="dark" richColors />
-            <div className="flex gap-5 items-center">
+            <div className="flex gap-10 lg:gap-0 items-center lg:flex-row flex-col">
                 <GridLayout />
                 <GameInput />
             </div>
