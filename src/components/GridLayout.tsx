@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { pattern } from "../utils/pattern";
+import { useGameContext } from "../ContextProvider";
 
 type GridCell = {
     color: string;
 };
 
 const GridLayout = () => {
-    const word = "Hello";
+    const { word, time } = useGameContext();
+    // console.log(word, time);
+
     const createGrid = () => {
         return Array(15).fill(null).map(() => (
             Array(20).fill(null).map(() => ({ color: "black" }))
@@ -51,12 +54,15 @@ const GridLayout = () => {
     };
 
     useEffect(() => {
+        if (time == 0) {
+            return;
+        }
         const interval = setInterval(() => {
             setPosition((prev) => (prev > -word.length * 10 ? prev - 1 : grid[0].length));
-        }, 100);
+        }, (20 - time) * 100);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [time]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -71,8 +77,8 @@ const GridLayout = () => {
     }, [position]);
 
     return (
-        <div className="bg-black h-lvh flex items-center">
-            <div className="grid-container text-cyan-200 mx-auto">
+        <div className="bg-black flex mt-10">
+            <div className="grid-container text-cyan-200 mx-4 shadow-md shadow-cyan-500/50">
                 {grid.map((row, rowIndex) =>
                     row.map((cell, colIndex) => (
                         <div
