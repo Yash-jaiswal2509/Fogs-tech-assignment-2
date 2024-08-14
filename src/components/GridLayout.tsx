@@ -59,7 +59,7 @@ const GridLayout = () => {
         }
         const interval = setInterval(() => {
             setPosition((prev) => (prev > -word.length * 12 ? prev - 1 : grid[0].length));
-        }, (20 - time) * 100);
+        }, (20 - time) * 10);
 
         return () => clearInterval(interval);
     }, [time]);
